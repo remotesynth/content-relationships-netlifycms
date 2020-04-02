@@ -1,6 +1,7 @@
 <html>
 <head>
     <title>Sample Relationships Site</title>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 {{ range where .Site.Pages.ByDate.Reverse "Section" "posts" }}
