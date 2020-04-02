@@ -5,6 +5,7 @@ author: brian-rinaldi
 related_posts:
     - return-of-skywalker-awful
     - last-jedi-was-good
+slug: han-shot-first
 ---
 
 Messing with the originals was never a good idea.
