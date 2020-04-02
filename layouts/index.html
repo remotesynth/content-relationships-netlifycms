@@ -1,0 +1,16 @@
+<html>
+<head>
+    <title>Sample Relationships Site</title>
+</head>
+<body>
+{{ range where .Site.Pages.ByDate.Reverse "Section" "posts" }}
+    {{ if isset .Params "author" }}
+        <h2><a href="{{.Permalink}}">{{ .Title }}</a></h2>
+        {{ $author_page := print "/authors/" .Params.Author }}
+        {{ with .Site.GetPage $author_page }}
+            <p>By {{.Title}}</p>
+        {{ end }}
+    {{ end }}
+{{ end }}
+</body>
+</html>

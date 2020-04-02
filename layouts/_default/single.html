@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>Sample Relationships Site</title>
+</head>
+<body>
+    <h2>{{ .Title }}</h2>
+    {{ $author_page := print "/authors/" .Params.Author }}
+    {{ with .Site.GetPage $author_page }}
+        <p><em>By {{.Title}}</em></p>
+    {{ end }}
+    {{.Content}}
+
+    <h4>Related Posts</h4>
+
+    <ul>
+    {{ range $postname := .Params.Related_posts }}
+        {{ $post_page := print "/posts/" $postname }}
+        {{ with $.GetPage $post_page }}
+            <li><a href="{{.Permalink}}">{{ .Title }}</a></li>
+        {{ end }}
+    {{ end }}
+    </ul>
+</body>
+</html>
