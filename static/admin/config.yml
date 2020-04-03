@@ -42,6 +42,7 @@ collections:
         name: related_posts
         label: Related Posts
         required: false
+        multiple: true
         hint: >-
           Other related posts
         collection: post
